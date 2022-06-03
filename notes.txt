@@ -1,0 +1,46 @@
+Title: Guess the Number
+Author: Jobb Rodriguez
+Rules:
+    1. Two players will guess a number ranging from 0 to 1000.
+    2. The players have unlimited guesses.
+    3. The game will return higher or lower upon guessing.
+    4. The first player to guess the number wins.
+Game Structure:
+    |                   GUESS THE NUMBER                |
+                           -GAME END-
+                        YOU WIN | YOU LOSE 
+                            CONTINUE 
+                          -GAME STATE-
+ GUESS A NUMBER FROM 0 TO 1000 | GUESS HIGHER | GUESS LOWER
+                            <NUMBER>
+                            [INPUT]
+                            BUTTON
+Game Tech:
+1. Vue for the frontend
+    - Center everything
+    - Using Flexbox: One Column
+2. Node and Express for the backend
+
+Game States:
+    1. Waiting for Players
+        > Waits for two players to connect to the server.
+        client: emit 'ready', id
+    2. Game State
+        > Game State starts when two players are connected.
+        > Declare the number to guess in the program.
+        server: broadcast 'startgame', number to guess
+        > Receive the guess of the players
+         - If input is empty, do not display the text.
+         - Else, present the text.
+        > Input is sent upon button click.
+         client: 'emit' guess
+         server: 'broadcast' status
+         - LOWER: Display "GUESS HIGHER"
+         - HIGHER: Display "GUESS LOWER"
+         - MATCH: Run Game End
+    3. Game End
+        > Game State ends.
+        > Waiting for Players state begins.
+        > Displays "YOU WIN" to the player who successfully guess the number.
+        > Displays "YOU LOSE" to the other player.
+        >
