@@ -22,14 +22,14 @@ Game Tech:
 2. Node and Express for the backend
 
 Game States:
-    1. Waiting for Players
+    [X] 1. Waiting for Players
         > Waits for two players to connect to the server.
         client: emit 'ready', id
     2. Game State
-        > Game State starts when two players are connected.
-        > Declare the number to guess in the program.
+        [X] > Game State starts when two players are connected.
+        [X] > Declare the number to guess in the program.
         server: broadcast 'startgame', number to guess
-        > Receive the guess of the players
+        [X] > Receive the guess of the players
          - If input is empty, do not display the text.
          - Else, present the text.
         > Input is sent upon button click.

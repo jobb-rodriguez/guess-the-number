@@ -1,0 +1,23 @@
+{
+  "name": "guess-the-number",
+  "version": "1.0.0",
+  "description": "This is in fulfillment of the final requirements for Networks and Communications",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobb-rodriguez/guess-the-number.git"
+  },
+  "author": "Jobb Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jobb-rodriguez/guess-the-number/issues"
+  },
+  "homepage": "https://github.com/jobb-rodriguez/guess-the-number#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1"
+  }
+}
