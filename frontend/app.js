@@ -5,8 +5,8 @@ const app = Vue.createApp({
             heading: 'Guess the Number',
             subheading: '',
             guess: '',
-            message: '',
-            placeholder: 'Waiting for opponent...',
+            message: 'Waiting for opponent...',
+            placeholder: '...',
             isDisabled: true,
         }
     },
@@ -14,6 +14,7 @@ const app = Vue.createApp({
         startGame() {
             this.subheading = "Guess a number from 0 to 1000";
             this.placeholder = "Type here";
+            this.message = '';
             this.isDisabled = false;
         },
         sendGuess() {

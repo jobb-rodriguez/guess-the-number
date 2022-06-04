@@ -25,7 +25,7 @@ function listen(io) {
             console.log(`Player ready: ${socket.id}`);
         })
         readyPlayerCount++;
-        if (readyPlayerCount === 2) {
+        if (readyPlayerCount % 2 == 0) {
             numberToGuess = Math.floor(Math.random() * 1001);
             console.log(numberToGuess);
             io.emit('startGame');
@@ -45,6 +45,10 @@ function listen(io) {
             } else {
                 io.to(socket.id).emit('incorrectGuess', status);
             }
+        })
+
+        socket.on('disconnect', (reason) => {
+            console.log(`${socket.id} disconnected due to ${reason}`);
         })
     });
 }
